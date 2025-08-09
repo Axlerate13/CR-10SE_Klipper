@@ -13,7 +13,7 @@ class CUSTOM_MACRO:
         self.heater_hot = None
         self.extruder_temp=None
         self.bed_temp=None
-        self.prtouch = None
+        # self.prtouch = None
         self.gcode.register_command("CX_PRINT_LEVELING_CALIBRATION", self.cmd_CX_PRINT_LEVELING_CALIBRATION, desc=self.cmd_CX_PRINT_LEVELING_CALIBRATION_help)
         self.gcode.register_command("CX_CLEAN_CALIBRATION_FLAGS", self.cmd_CX_CLEAN_CALIBRATION_FLAGS, desc=self.cmd_CX_CLEAN_CALIBRATION_FLAGS_help)
         self.gcode.register_command("CX_PRINT_DRAW_ONE_LINE", self.cmd_CX_PRINT_DRAW_ONE_LINE, desc=self.cmd_CX_PRINT_DRAW_ONE_LINE_help)
@@ -44,11 +44,11 @@ class CUSTOM_MACRO:
         self.g28_ext_temp = self.extruder_temp - self.temp_diff
         if self.g28_ext_temp > 200.0:
             self.g28_ext_temp = 200.0
-        try:
-            self.prtouch = self.printer.lookup_object('prtouch_v2')
-        except:
-            self.prtouch = self.printer.lookup_object('prtouch')
-            gcmd.respond_info("self.prtouch = prtouch")
+        #try:
+            #self.prtouch = self.printer.lookup_object('prtouch_v2')
+        #except:
+            #self.prtouch = self.printer.lookup_object('prtouch')
+            #gcmd.respond_info("self.prtouch = prtouch")
         # self.prtouch.change_hot_min_temp(self.g28_ext_temp)
         self.bed_temp = gcmd.get_float('BED_TEMP', default=self.default_bed_temp, minval=30.0, maxval=130.0)
         self.leveling_calibration = gcmd.get_int('LEVELING_CALIBRATION', default=1, minval=0, maxval=1)
