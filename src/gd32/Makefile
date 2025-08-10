@@ -83,13 +83,13 @@ target-y += $(OUT)klipper.bin
 #	$(Q)$(OBJCOPY) -l binary -O ihex $< $@
 
 ifeq ($(CONFIG_MACH_GD32F30X),y)
-$(OUT)src/prtouch_v2.o:
-	$(Q)cp src/prtouch_v2_cm4.o $@
+# $(OUT)src/prtouch_v2.o:
+	# $(Q)cp src/prtouch_v2_cm4.o $@
 endif
 
 ifeq ($(CONFIG_MACH_GD32E23X),y)
-$(OUT)src/prtouch_v2.o: 
-	$(Q)cp src/prtouch_v2_cm23.o $@
+# $(OUT)src/prtouch_v2.o: 
+	# $(Q)cp src/prtouch_v2_cm23.o $@
 endif
 
 
