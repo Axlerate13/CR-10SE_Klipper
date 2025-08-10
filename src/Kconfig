@@ -149,9 +149,9 @@ config HAVE_GPIO
 config HAVE_GPIO_ADC
     bool
     default n
-config HAVE_PRTOUCH
-    bool
-    default n
+#config HAVE_PRTOUCH
+#    bool
+#    default n
 config HAVE_GPIO_SPI
     bool
     default n
